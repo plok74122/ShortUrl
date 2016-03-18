@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20160318042626) do
 
   create_table "short_url_lists", force: :cascade do |t|
-    t.string   "hash"
+    t.string   "unique_string"
     t.string   "redirect"
     t.integer  "count"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
