@@ -22,5 +22,7 @@ class ShortUrlController < ApplicationController
   end
   def redirect
     @hash = params.permit(:unique_string)
+    @exist_redirect = ShortUrlList.find_by(unique_string: @hash[:unique_string])
+    @exist_redirect.update(count: @exist_redirect.count+1)
   end
 end

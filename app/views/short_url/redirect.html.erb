@@ -1,1 +1,5 @@
-<%= @hash[:unique_string] %>
+第<%= @exist_redirect.count %>次轉址到<%= link_to @exist_redirect.redirect %><br />
+5秒後自動轉跳
+
+<script>window.setTimeout("location.href='<%= @exist_redirect.redirect %>'",5000);</script>
+
