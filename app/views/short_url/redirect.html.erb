@@ -1,5 +1,8 @@
-第<%= @exist_redirect.count %>次轉址到<%= link_to @exist_redirect.redirect %><br />
-5秒後自動轉跳
-
-<script>window.setTimeout("location.href='<%= @exist_redirect.redirect %>'",5000);</script>
+<% if @exist_redirect != nil %>
+    第<%= @exist_redirect.count %>次轉址到<%= link_to @exist_redirect.redirect %><br/>
+    5秒後自動轉跳
+    <script>window.setTimeout("location.href='<%= @exist_redirect.redirect %>'", 5000);</script>
+<% else %>
+    阿！我不認識這個短網址！<%= link_to "創立一個短網址" ,  short_url_index_path() %>吧！
+<% end %>
 

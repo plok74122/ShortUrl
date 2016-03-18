@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "short_url#index"
   resources :short_url
 
   get ':unique_string', :to => 'short_url#redirect'
